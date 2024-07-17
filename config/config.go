@@ -16,8 +16,6 @@ func ConnectToMongoDB() (*mongo.Client, error) {
         return nil, fmt.Errorf("MONGODB_URI is not set")
     }
 
-	println(os.Getenv("MONGODB_URI"))
-
     clientOptions := options.Client().ApplyURI(uri)
     client, err := mongo.Connect(context.Background(), clientOptions)
     if err != nil {

@@ -12,7 +12,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o app .
 
 FROM alpine:latest  
 
-ENV MONGODB_URI="mongodb://localhost:27017"
+ENV MONGODB_URI="mongodb://mongodb:27017"
 
 WORKDIR /root/
 COPY --from=builder /app/app .
